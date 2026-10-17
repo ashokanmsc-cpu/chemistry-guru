@@ -213,3 +213,33 @@ html[lang="ta"] .field label{font-family:var(--sans);font-size:13px;text-transfo
 .std-tab.active{background:var(--forest);color:#fff}
 .medium-tag{display:inline-block;margin-left:4px;padding:1px 8px;border-radius:999px;background:var(--rust-soft);color:#9a4115;font-size:11px;font-weight:600}
 @media (max-width:720px){.std-switch{display:flex}.std-tab{flex:1;padding:10px 12px}}
+
+/* Responsive hardening: let grid/flex children shrink and long (Tamil) words wrap instead of widening the page */
+.hero-grid>*,.contact-grid>*,.section-head>*,.hero-note div,.creds li>*,.social-grid>*,.youtube-band>*{min-width:0}
+@media (max-width:980px){.social-grid{grid-template-columns:minmax(0,1fr)}}
+body{overflow-wrap:break-word}
+.eyebrow{flex-wrap:wrap;max-width:100%}
+@media (max-width:720px){
+  html[lang="ta"] h1{font-size:clamp(28px,8.4vw,40px)}
+  html[lang="ta"] .section-head h2,html[lang="ta"] .contact h2{font-size:clamp(24px,7vw,34px)}
+  .hero-note div+div{padding-left:12px}
+  .hero-note small{display:block;line-height:1.35;margin-top:4px}
+  .legend{flex-wrap:wrap}
+}
+@media (max-width:400px){
+  .nav{gap:10px}
+  .brand{gap:8px}
+  .brand-mark{width:38px;height:38px}
+  .brand b{font-size:16px}
+  .lang-btn{padding:6px 10px}
+  .menu-btn{width:38px;height:38px}
+  .hero-note strong{font-size:19px}
+  html[lang="ta"] .hero-note strong{font-size:16px}
+  .chapter-grid{gap:8px}
+  .chapter{padding:12px 12px 12px}
+  .sym{font-size:34px}
+  .chapter h3{font-size:14px}
+  .tile-corner{width:76px;height:76px}
+  .tile-corner b{font-size:28px}
+  .btn{padding:13px 20px}
+}

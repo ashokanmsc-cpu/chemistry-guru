@@ -67,7 +67,7 @@ export const TRANSLATIONS = {
     en: 'Have an enquiry about quizzes, study resources, or Chemistry learning? Fill in the form and continue the conversation through WhatsApp.',
     ta: 'வினாடி வினா, படிப்புப் பொருட்கள் அல்லது வேதியியல் கற்றல் தொடர்பான கேள்விகளுக்கு இந்தப் படிவத்தை நிரப்பி WhatsApp மூலம் தொடர்புகொள்ளுங்கள்.',
   },
-  'contact.p1': { en: 'Class XII Chemistry quiz support', ta: 'பன்னிரண்டாம் வகுப்பு வேதியியல் வினாடி வினா உதவி' },
+  'contact.p1': { en: 'Class XI & XII Chemistry quiz support', ta: 'பதினொன்று & பன்னிரண்டாம் வகுப்பு வேதியியல் வினாடி வினா உதவி' },
   'contact.p2': { en: 'Chapter-wise practice resources', ta: 'பாடவாரியான பயிற்சி வளங்கள்' },
   'contact.p3': { en: 'Message opens in WhatsApp for you to review', ta: 'செய்தி WhatsApp-இல் திறக்கும்; சரிபார்த்து அனுப்பலாம்' },
 
