@@ -6,3 +6,4 @@ export const TELEGRAM_URL = 'https://t.me/chemistrygurudpi';
 
 /** Small copy for on-page display; the full-size images/logo.jpg is used for social previews. */
 export const LOGO_SRC = 'images/logo-192.jpg';
+export const PROFILE_PHOTO_SRC = 'images/profile.jpg';

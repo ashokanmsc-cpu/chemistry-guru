@@ -63,7 +63,7 @@ html[lang="ta"] h1 span{font-style:normal}
 .tile-corner{position:absolute;top:-1px;right:-1px;width:92px;height:92px;background:var(--rust);color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:10px 12px;border-radius:0 6px 0 6px}
 .tile-corner span{font-family:var(--mono);font-size:11px;opacity:.85}
 .tile-corner b{font-family:'Fraunces',serif;font-size:34px;line-height:1;font-weight:700}
-.avatar{width:96px;height:96px;border-radius:50%;overflow:hidden;border:3px solid var(--paper-2);background:#fff}
+.avatar{width:120px;height:120px;border-radius:50%;overflow:hidden;border:3px solid var(--paper-2);background:#fff}
 .avatar img{width:100%;height:100%;object-fit:cover}
 .profile-card h2{font-family:'Fraunces',serif;font-weight:600;font-size:30px;letter-spacing:-.01em;color:var(--forest);margin-top:18px;line-height:1.15}
 .role{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--rust);margin-top:4px}
