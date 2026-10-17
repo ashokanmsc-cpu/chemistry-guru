@@ -2,7 +2,7 @@ import { Component, computed, inject, signal } from '@angular/core';
 import { LanguageService } from '../core/language.service';
 import { TranslatePipe } from '../core/translate.pipe';
 import { RevealDirective } from '../shared/reveal.directive';
-import { CHAPTERS } from '../data/chapters';
+import { CHAPTERS, Standard } from '../data/chapters';
 import { ChapterCard } from './chapter-card';
 import { SocialLinks } from './social-links';
 
@@ -27,6 +27,13 @@ type VolumeFilter = 'all' | 1 | 2;
           </div>
         </div>
 
+        <div class="std-switch" role="tablist" aria-label="Choose class">
+          @for (s of standards; track s.value) {
+            <button class="std-tab" type="button" role="tab" [attr.aria-selected]="std() === s.value"
+                    [class.active]="std() === s.value" (click)="std.set(s.value)">{{ s.key | t }}</button>
+          }
+        </div>
+
         <div class="toolbar">
           <div class="tabs">
             @for (tab of tabs; track tab.value) {
@@ -41,8 +48,8 @@ type VolumeFilter = 'all' | 1 | 2;
         </div>
 
         <div class="chapter-grid">
-          @for (chapter of filtered(); track chapter.no) {
-            <app-chapter-card [chapter]="chapter" [index]="chapter.no - 1" />
+          @for (chapter of filtered(); track chapter.std + '-' + chapter.no) {
+            <app-chapter-card [chapter]="chapter" [index]="$index" />
           }
         </div>
         <div class="empty" [style.display]="filtered().length ? 'none' : 'block'">{{ 'quiz.empty' | t }}</div>
@@ -54,8 +61,14 @@ type VolumeFilter = 'all' | 1 | 2;
 })
 export class ChapterList {
   protected readonly language = inject(LanguageService);
+  protected readonly std = signal<Standard>(12);
   protected readonly volume = signal<VolumeFilter>('all');
   protected readonly term = signal('');
+
+  protected readonly standards = [
+    { value: 12, key: 'quiz.std12' },
+    { value: 11, key: 'quiz.std11' },
+  ] as const;
 
   protected readonly tabs = [
     { value: 'all', key: 'quiz.all' },
@@ -66,7 +79,9 @@ export class ChapterList {
   protected readonly filtered = computed(() => {
     const term = this.term().trim().toLowerCase();
     const volume = this.volume();
+    const std = this.std();
     return CHAPTERS.filter(c =>
+      c.std === std &&
       (volume === 'all' || c.volume === volume) &&
       `${c.title.en} ${c.title.ta}`.toLowerCase().includes(term));
   });

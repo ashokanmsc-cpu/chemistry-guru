@@ -6,12 +6,12 @@ export const TRANSLATIONS = {
   'nav.contact': { en: 'Contact', ta: 'தொடர்பு' },
   'nav.cta': { en: 'Explore Quizzes ↗', ta: 'வினாடி வினாக்கள் ↗' },
 
-  'hero.eyebrow': { en: 'Class XII · Higher Secondary Chemistry', ta: 'பன்னிரண்டாம் வகுப்பு · மேல்நிலை வேதியியல்' },
+  'hero.eyebrow': { en: 'Class XI & XII · Higher Secondary Chemistry', ta: 'பதினொன்று & பன்னிரண்டாம் வகுப்பு · மேல்நிலை வேதியியல்' },
   'hero.title1': { en: 'Make every mark', ta: 'ஒவ்வொரு மதிப்பெண்ணும்' },
   'hero.title2': { en: 'count.', ta: 'முக்கியம்.' },
   'hero.text': {
-    en: 'Practise chapter-wise one-mark Chemistry questions with a focused quiz collection designed for Higher Secondary Second Year students.',
-    ta: 'மேல்நிலை இரண்டாம் ஆண்டு மாணவர்களுக்காகத் தயாரிக்கப்பட்ட பாடவாரியான ஒரு மதிப்பெண் வேதியியல் வினாக்களைப் பயிற்சி செய்யுங்கள்.',
+    en: 'Practise chapter-wise one-mark Chemistry questions with a focused quiz collection designed for Higher Secondary First and Second Year students.',
+    ta: 'மேல்நிலை முதலாம் மற்றும் இரண்டாம் ஆண்டு மாணவர்களுக்காகத் தயாரிக்கப்பட்ட பாடவாரியான ஒரு மதிப்பெண் வேதியியல் வினாக்களைப் பயிற்சி செய்யுங்கள்.',
   },
   'hero.start': { en: 'Start a Chapter Quiz →', ta: 'பாட வினாடி வினாவைத் தொடங்குக →' },
   'hero.meet': { en: 'Meet Your Teacher', ta: 'ஆசிரியரை அறிய' },
@@ -32,6 +32,8 @@ export const TRANSLATIONS = {
     en: 'Pick a chapter to open its quiz in Google Forms. Practise at your own pace and revisit topics as needed.',
     ta: 'Google Forms வினாடி வினாவைத் திறக்க ஒரு பாடத்தைத் தேர்ந்தெடுக்கவும். உங்கள் வேகத்தில் பயிற்சி செய்யலாம்.',
   },
+  'quiz.std12': { en: 'Class 12', ta: '12ஆம் வகுப்பு' },
+  'quiz.std11': { en: 'Class 11', ta: '11ஆம் வகுப்பு' },
   'quiz.vol1': { en: 'Volume 1', ta: 'தொகுதி 1' },
   'quiz.vol2': { en: 'Volume 2', ta: 'தொகுதி 2' },
   'quiz.all': { en: 'All chapters', ta: 'அனைத்தும்' },
@@ -43,6 +45,7 @@ export const TRANSLATIONS = {
   'card.vol': { en: 'Vol', ta: 'தொ' },
   'card.sub': { en: 'One-mark chapter quiz', ta: 'ஒரு மதிப்பெண் பாட வினாடி வினா' },
   'card.open': { en: 'Open quiz', ta: 'வினாடி வினாவைத் திறக்க' },
+  'card.taOnly': { en: 'Tamil medium', ta: 'தமிழ் வழி' },
 
   'yt.title': { en: 'Learn more with Chemistry Guru', ta: 'Chemistry Guru உடன் மேலும் கற்கலாம்' },
   'yt.text': {

@@ -19,7 +19,7 @@ import { LOGO_SRC } from '../config';
           <li><span>{{ 'profile.position' | t }}</span><div>Postgraduate Assistant in Chemistry</div></li>
           <li><span>{{ 'profile.school' | t }}</span><div>Government (ADW) Higher Secondary School, Athipallam, Krishnagiri District.</div></li>
         </ul>
-        <div class="profile-meta"><span class="chip">Class XII Chemistry</span><span class="chip alt">One-Mark Practice</span></div>
+        <div class="profile-meta"><span class="chip">Class XI &amp; XII Chemistry</span><span class="chip alt">One-Mark Practice</span></div>
       </div>
     </aside>
   `,
