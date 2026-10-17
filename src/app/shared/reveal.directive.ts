@@ -1,29 +1,25 @@
-import { Directive, ElementRef, OnDestroy, OnInit, inject } from '@angular/core';
+import { DestroyRef, Directive, ElementRef, afterNextRender, inject } from '@angular/core';
 
-/** Adds the `reveal` class, then `in` once the element scrolls into view. */
+/** Adds the `reveal` class, then `in` once the element scrolls into view (browser only). */
 @Directive({ selector: '[appReveal]', host: { class: 'reveal' } })
-export class RevealDirective implements OnInit, OnDestroy {
-  private readonly el = inject(ElementRef<HTMLElement>);
-  private observer?: IntersectionObserver;
+export class RevealDirective {
+  constructor() {
+    const node: HTMLElement = inject(ElementRef).nativeElement;
+    const destroyRef = inject(DestroyRef);
 
-  ngOnInit(): void {
-    const node = this.el.nativeElement;
-    if (!('IntersectionObserver' in window)) {
-      node.classList.add('in');
-      return;
-    }
-    this.observer = new IntersectionObserver(entries => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          node.classList.add('in');
-          this.observer?.disconnect();
-        }
+    afterNextRender(() => {
+      if (!('IntersectionObserver' in window)) {
+        node.classList.add('in');
+        return;
       }
-    }, { threshold: 0.12 });
-    this.observer.observe(node);
-  }
-
-  ngOnDestroy(): void {
-    this.observer?.disconnect();
+      const observer = new IntersectionObserver(entries => {
+        if (entries.some(e => e.isIntersecting)) {
+          node.classList.add('in');
+          observer.disconnect();
+        }
+      }, { threshold: 0.12 });
+      observer.observe(node);
+      destroyRef.onDestroy(() => observer.disconnect());
+    });
   }
 }

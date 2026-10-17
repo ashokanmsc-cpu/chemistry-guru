@@ -1,4 +1,4 @@
-import { DOCUMENT, Injectable, effect, inject, signal } from '@angular/core';
+import { DOCUMENT, Injectable, afterNextRender, effect, inject, signal } from '@angular/core';
 import { Bilingual, Lang } from '../data/chapters';
 import { TRANSLATIONS, TranslationKey } from '../i18n/translations';
 
@@ -7,18 +7,24 @@ const STORAGE_KEY = 'cg-lang';
 @Injectable({ providedIn: 'root' })
 export class LanguageService {
   private readonly document = inject(DOCUMENT);
-  readonly lang = signal<Lang>(this.readSaved());
+  /** Always starts in English so the pre-rendered HTML matches the first browser render. */
+  readonly lang = signal<Lang>('en');
 
   constructor() {
     effect(() => {
-      const lang = this.lang();
-      this.document.documentElement.lang = lang;
-      try { localStorage.setItem(STORAGE_KEY, lang); } catch { /* storage unavailable */ }
+      this.document.documentElement.lang = this.lang();
+    });
+    // Browser only: restore the visitor's saved choice after hydration.
+    afterNextRender(() => {
+      try {
+        if (localStorage.getItem(STORAGE_KEY) === 'ta') this.lang.set('ta');
+      } catch { /* storage unavailable */ }
     });
   }
 
   set(lang: Lang): void {
     this.lang.set(lang);
+    try { localStorage.setItem(STORAGE_KEY, lang); } catch { /* storage unavailable */ }
   }
 
   /** Text for a translation key in the current language. */
@@ -29,13 +35,5 @@ export class LanguageService {
   /** Pick the current-language value from any bilingual object. */
   pick(value: Bilingual): string {
     return value[this.lang()];
-  }
-
-  private readSaved(): Lang {
-    try {
-      return localStorage.getItem(STORAGE_KEY) === 'ta' ? 'ta' : 'en';
-    } catch {
-      return 'en';
-    }
   }
 }

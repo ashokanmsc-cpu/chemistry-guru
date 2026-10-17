@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ashokanmsc-cpu.github.io/chemistry-guru/sitemap.xml

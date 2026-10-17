@@ -14,7 +14,7 @@ import { LOGO_SRC } from '../config';
     <header class="topbar" [class.scrolled]="scrolled()">
       <div class="wrap nav">
         <a class="brand" href="#home" aria-label="Chemistry Guru home">
-          <span class="brand-mark"><img [src]="logo" alt="Chemistry Guru logo"></span>
+          <span class="brand-mark"><img [src]="logo" alt="Chemistry Guru logo" width="44" height="44"></span>
           <span><b>CHEMISTRY GURU</b><small>LEARN • PRACTISE • EXCEL</small></span>
         </a>
         <nav class="nav-links" [class.open]="menuOpen()">
