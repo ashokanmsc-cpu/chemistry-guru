@@ -9,7 +9,7 @@ import { Chapter } from '../data/chapters';
   imports: [TranslatePipe, DecimalPipe],
   host: { style: 'display:contents' },
   template: `
-    <a class="chapter" [attr.data-vol]="chapter().volume" [style.--delay]="index() * 35 + 'ms'"
+    <a class="chapter" [attr.data-vol]="chapter().volume" [style.--delay]="index() * 35 + 'ms'" [style.--chapter-color]="chapter().color"
        [href]="url()" target="_blank" rel="noopener">
       <div class="chapter-top">
         <span class="number">{{ chapter().no | number: '2.0-0' }}</span>
