@@ -1,3 +1,4 @@
+
 name: Deploy to GitHub Pages
 
 on:
@@ -22,16 +23,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 24
           cache: npm
+
       - run: npm ci
+
       - name: Fetch latest YouTube videos
         run: node scripts/fetch-videos.mjs
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-      - run: npx ng build --base-href "/${{ github.event.repository.name }}/"
+
+      - name: Build Angular for custom domain
+        run: npx ng build --base-href "/"
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist/chemistry-guru/browser
