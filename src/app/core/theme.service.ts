@@ -8,12 +8,12 @@ export const THEME_STORAGE_KEY = 'cg-theme';
 export class ThemeService {
   private readonly document = inject(DOCUMENT);
   /**
-   * Dark is the default. In the browser, start from the attribute the inline
+   * Light is the default. In the browser, start from the attribute the inline
    * script in index.html already set from the saved choice, so there is no flash.
    * Templates never branch on this signal (icons switch via CSS), so hydration stays in sync.
    */
   readonly theme = signal<Theme>(
-    isPlatformBrowser(inject(PLATFORM_ID)) && this.document.documentElement.dataset['theme'] === 'light' ? 'light' : 'dark',
+    isPlatformBrowser(inject(PLATFORM_ID)) && this.document.documentElement.dataset['theme'] === 'dark' ? 'dark' : 'light',
   );
 
   constructor() {

@@ -55,6 +55,7 @@ gh run list --limit 1
 
 ## Current design
 - Theme: navy + gold (from the user's reference HTML). Key colours: navy `#07142d`, primary `#0b2047`, gold `#f8c94f`, light gold `#ffe9a0`, background `#f5f7fc`, ink `#101b34`, Vol 2 accent `#b07c09`.
+- Light/dark switch: **light is the default**; sun/moon button in the header toggles dark. Choice saved in localStorage `cg-theme` (restored by inline script in `src/index.html` before paint). Logic: `src/app/core/theme.service.ts`; dark colours: `html[data-theme="dark"]` block in `src/styles.scss`.
 - Navy header and hero, gold buttons/accents, white cards.
 - Responsive checked at 320/360/390/430 (phones), 768/1024 (iPad), 1366, 1920 – no horizontal overflow in EN or TA. Mobile is top priority for the user.
 
