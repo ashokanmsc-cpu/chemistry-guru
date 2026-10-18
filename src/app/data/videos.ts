@@ -10,7 +10,7 @@ export const LATEST_VIDEOS: Video[] = [
   {
     "id": "y_WUmwCAsDo",
     "title": "Solid State | திடநிலை | 12 Chemistry | NEET | TRB | TNSET | MCQ/PYQ | Chemistry Guru | DR ASHOKAN P",
-    "published": "2026-10-17"
+    "published": "2026-10-18"
   },
   {
     "id": "YY24hWBSD1I",
@@ -20,12 +20,7 @@ export const LATEST_VIDEOS: Video[] = [
   {
     "id": "Rwt3GERgWMY",
     "title": "12 Chemistry | p-Block Elements II | Book Back MCQs | Explanation | Unit 3 | CHEMISTRY GURU | NEET",
-    "published": "2026-10-15"
-  },
-  {
-    "id": "bOqNL87bQyk",
-    "title": "Coordination Chemistry MCQs  | அணைவு வேதியியல் வினாக்கள் | 12th Chemistry | NEET | TRB | TNSET |",
-    "published": "2026-10-15"
+    "published": "2026-10-16"
   },
   {
     "id": "bOx9qHjefjA",
@@ -35,6 +30,11 @@ export const LATEST_VIDEOS: Video[] = [
   {
     "id": "8cDBaKz69Fg",
     "title": "12 Chemistry Unit 2 | p-Block Elements I | Book Back Questions & Answers | CHEMISTRY GURU I TNSCERT",
+    "published": "2026-10-15"
+  },
+  {
+    "id": "ZPfQKev4oH8",
+    "title": "Applications of Coordination Compounds | NEET | TRB | TNSET | அணைவுச் சேர்மங்களின் பயன்கள் |  USES",
     "published": "2026-10-14"
   }
 ];
