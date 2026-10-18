@@ -21,6 +21,7 @@ import { LOGO_SRC } from '../config';
         <nav class="nav-links" [class.open]="menuOpen()">
           <a href="#profile" (click)="menuOpen.set(false)">{{ 'nav.profile' | t }}</a>
           <a href="#quizzes" (click)="menuOpen.set(false)">{{ 'nav.quizzes' | t }}</a>
+          <a href="#downloads" (click)="menuOpen.set(false)">{{ 'nav.downloads' | t }}</a>
           <a href="#contact" (click)="menuOpen.set(false)">{{ 'nav.contact' | t }}</a>
         </nav>
         <div class="language-switch" aria-label="Choose language">

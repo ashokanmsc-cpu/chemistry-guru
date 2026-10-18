@@ -77,7 +77,7 @@ html[lang="ta"] h1 span{font-style:normal}
 
 /* Marquee strip */
 .strip{background:var(--forest);color:var(--paper);overflow:hidden;border-block:1px solid var(--forest)}
-.strip-track{display:flex;gap:48px;padding:16px 0;width:max-content;animation:marquee 40s linear infinite}
+.strip-track{display:flex;gap:48px;padding:16px 0;width:max-content;animation:marquee 70s linear infinite}
 .strip-track span{font-family:'Fraunces',serif;font-size:20px;white-space:nowrap;display:flex;align-items:center;gap:48px}
 .strip-track span::after{content:"✦";color:var(--gold);font-size:14px}
 @keyframes marquee{to{transform:translateX(-50%)}}
@@ -309,6 +309,21 @@ html[data-theme="light"] .theme-btn .icon-moon{display:block}
 }
 @media (max-width:350px){.brand > span:last-child{display:none}}
 
+/* Question bank downloads */
+.downloads{padding-top:0}
+.download-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.download-card{display:flex;flex-direction:column;gap:10px;background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:6px;padding:20px}
+.download-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.pdf-badge{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.06em;color:#fff;background:#d93025;border-radius:4px;padding:4px 8px}
+.download-card h3{font-family:var(--serif);font-weight:600;font-size:20px;line-height:1.25;color:var(--forest)}
+.download-card p{font-size:14px;color:var(--ink-2)}
+.download-meta{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.download-actions{margin-top:auto;padding-top:6px;display:flex;flex-wrap:wrap;gap:10px}
+.downloads .btn.ghost{background:transparent;color:var(--forest);border:1px solid var(--line)}
+html[data-theme="dark"] .downloads .btn.ghost{color:#fff;border-color:#ffffff40}
+@media (max-width:980px){.download-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.download-grid{grid-template-columns:minmax(0,1fr);gap:12px}.download-card{padding:16px}.download-card h3{font-size:18px}}
+
 /* Latest YouTube videos */
 .videos{padding-top:0}
 .video-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
@@ -331,6 +346,32 @@ html[data-theme="light"] .theme-btn .icon-moon{display:block}
   .video-body{min-width:0;padding:8px 12px}
   .video-body time{font-size:11px}
   .video-body h3{margin-top:3px;font-size:13px;line-height:1.35;-webkit-line-clamp:3}
+}
+
+/* Narrow laptops: four nav links no longer fit, so use the menu button */
+.nav-links a{white-space:nowrap}
+.language-switch{flex:none}
+@media (min-width:981px){.brand b{white-space:nowrap}}
+.theme-btn,.menu-btn{flex:none}
+@media (max-width:480px){
+  .nav{gap:8px}
+  .brand b{font-size:14px;line-height:1.05;max-width:96px;overflow-wrap:normal}
+}
+/* Tamil labels are longer: drop the duplicate quiz button and collapse earlier */
+html[lang="ta"] .nav-cta{display:none}
+@media (max-width:1240px){
+  html[lang="ta"] .nav-links{display:none}
+  html[lang="ta"] .language-switch{margin-left:auto}
+  html[lang="ta"] .menu-btn{display:flex}
+  html[lang="ta"] .nav-links.open{display:flex;flex-direction:column;gap:0;position:absolute;left:0;right:0;top:72px;background:var(--navy);border-bottom:1px solid #ffffff1a;padding:8px 20px 16px}
+  html[lang="ta"] .nav-links.open a{padding:12px 0;border-bottom:1px dashed #ffffff22}
+}
+@media (max-width:1280px){
+  .nav-links{display:none}
+  .language-switch{margin-left:auto}
+  .menu-btn{display:flex}
+  .nav-links.open{display:flex;flex-direction:column;gap:0;position:absolute;left:0;right:0;top:72px;background:var(--navy);border-bottom:1px solid #ffffff1a;padding:8px 20px 16px}
+  .nav-links.open a{padding:12px 0;border-bottom:1px dashed #ffffff22}
 }
 
 /* Mobile: uniform button padding */

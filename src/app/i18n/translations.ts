@@ -3,6 +3,7 @@ import { Bilingual } from '../data/chapters';
 export const TRANSLATIONS = {
   'nav.profile': { en: 'Teacher Profile', ta: 'ஆசிரியர் விவரம்' },
   'nav.quizzes': { en: 'Chapter Quizzes', ta: 'பாடவாரியான வினாடி வினா' },
+  'nav.downloads': { en: 'Question Bank', ta: 'வினா வங்கி' },
   'nav.contact': { en: 'Contact', ta: 'தொடர்பு' },
   'nav.cta': { en: 'Explore Quizzes ↗', ta: 'வினாடி வினாக்கள் ↗' },
 
@@ -53,6 +54,15 @@ export const TRANSLATIONS = {
     ta: 'மேலும் வேதியியல் பாடங்கள் மற்றும் தகவல்களுக்கு YouTube சேனலைப் பார்வையிடுங்கள்.',
   },
   'yt.btn': { en: 'Visit YouTube ↗', ta: 'YouTube பார்க்க ↗' },
+  'dl.kicker': { en: 'Free study material', ta: 'இலவச படிப்புப் பொருட்கள்' },
+  'dl.title': { en: 'Question banks', ta: 'வினா வங்கி' },
+  'dl.text': {
+    en: 'Download the Class 11 and Class 12 question banks as PDF and revise the questions asked most often in public exams.',
+    ta: '11 மற்றும் 12ஆம் வகுப்பு வினா வங்கிகளை PDF ஆகப் பதிவிறக்கி, பொதுத்தேர்வில் அதிகம் கேட்கப்பட்ட வினாக்களைத் திருப்புதல் செய்யுங்கள்.',
+  },
+  'dl.pages': { en: 'pages', ta: 'பக்கங்கள்' },
+  'dl.download': { en: 'Download PDF ↓', ta: 'பதிவிறக்கு ↓' },
+  'dl.view': { en: 'View', ta: 'பார்க்க' },
   'vid.kicker': { en: 'Fresh from YouTube', ta: 'YouTube-இல் புதியவை' },
   'vid.title': { en: 'Latest videos', ta: 'சமீபத்திய காணொளிகள்' },
   'vid.text': {
