@@ -53,6 +53,13 @@ export const TRANSLATIONS = {
     ta: 'மேலும் வேதியியல் பாடங்கள் மற்றும் தகவல்களுக்கு YouTube சேனலைப் பார்வையிடுங்கள்.',
   },
   'yt.btn': { en: 'Visit YouTube ↗', ta: 'YouTube பார்க்க ↗' },
+  'vid.kicker': { en: 'Fresh from YouTube', ta: 'YouTube-இல் புதியவை' },
+  'vid.title': { en: 'Latest videos', ta: 'சமீபத்திய காணொளிகள்' },
+  'vid.text': {
+    en: 'New lessons from the Chemistry Guru channel appear here automatically.',
+    ta: 'Chemistry Guru சேனலின் புதிய பாடங்கள் இங்கே தானாகவே தோன்றும்.',
+  },
+  'vid.all': { en: 'See all videos ↗', ta: 'அனைத்து காணொளிகளும் ↗' },
   'tg.title': { en: 'Join the Telegram channel', ta: 'Telegram சேனலில் இணையுங்கள்' },
   'tg.text': {
     en: 'Get quiz updates, study materials and announcements directly on Telegram.',
