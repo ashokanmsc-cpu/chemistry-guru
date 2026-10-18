@@ -21,10 +21,6 @@ type VolumeFilter = 'all' | 1 | 2;
             <h2>{{ 'quiz.title' | t }}</h2>
             <p>{{ 'quiz.text' | t }}</p>
           </div>
-          <div class="legend">
-            <span><i style="background:var(--forest)"></i>{{ 'quiz.vol1' | t }}</span>
-            <span><i style="background:var(--rust)"></i>{{ 'quiz.vol2' | t }}</span>
-          </div>
         </div>
 
         <div class="std-switch" role="tablist" aria-label="Choose class">

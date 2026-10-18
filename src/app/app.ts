@@ -5,12 +5,13 @@ import { Marquee } from './components/marquee';
 import { ChapterList } from './components/chapter-list';
 import { Downloads } from './components/downloads';
 import { LatestVideos } from './components/latest-videos';
+import { Testimonials } from './components/testimonials';
 import { Contact } from './components/contact';
 import { Overlays } from './components/overlays';
 
 @Component({
   selector: 'app-root',
-  imports: [Header, Hero, Marquee, ChapterList, Downloads, LatestVideos, Contact, Overlays],
+  imports: [Header, Hero, Marquee, ChapterList, Downloads, Testimonials, LatestVideos, Contact, Overlays],
   templateUrl: './app.html',
 })
 export class App {}

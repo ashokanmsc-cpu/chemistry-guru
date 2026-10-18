@@ -16,7 +16,7 @@ import { LOGO_SRC } from '../config';
       <div class="wrap nav">
         <a class="brand" href="#home" aria-label="Chemistry Guru home">
           <span class="brand-mark"><img [src]="logo" alt="Chemistry Guru logo" width="44" height="44"></span>
-          <span><b>CHEMISTRY GURU</b><small>LEARN • PRACTISE • EXCEL</small></span>
+          <span><b>CHEMISTRY GURU</b><small class="ls">YOUR SUCCESS IS MY REACTION</small></span>
         </a>
         <nav class="nav-links" [class.open]="menuOpen()">
           <a href="#profile" (click)="menuOpen.set(false)">{{ 'nav.profile' | t }}</a>

@@ -11,7 +11,7 @@ import { PROFILE_PHOTO_SRC } from '../config';
     <aside class="profile" id="profile" appReveal>
       <div class="profile-card">
         <div class="tile-corner"><span>Ph.D.</span><b>Ap</b></div>
-        <div class="avatar"><img [src]="photo" alt="Dr. Ashokan P, Chemistry Guru" width="120" height="120"></div>
+        <div class="avatar"><img [src]="photo" alt="Dr. Ashokan P, Chemistry Guru" width="150" height="180"></div>
         <h2>Dr. Ashokan P</h2>
         <div class="role">{{ 'profile.role' | t }}</div>
         <ul class="creds">
