@@ -9,6 +9,8 @@ import { CHAPTERS } from '../data/chapters';
   host: { style: 'display:contents' },
   template: `
     <section class="hero" id="home">
+      <img class="molecule-animation" src="images/chemistry_guru_rotating_molecule.svg" alt="" aria-hidden="true"
+           width="800" height="600" decoding="async">
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <div class="eyebrow"><span>{{ 'hero.eyebrow' | t }}</span></div>

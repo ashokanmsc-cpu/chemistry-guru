@@ -309,6 +309,17 @@ html[data-theme="light"] .theme-btn .icon-moon{display:block}
 }
 @media (max-width:350px){.brand > span:last-child{display:none}}
 
+/* Rotating molecule behind the hero (decorative) */
+.hero{overflow:hidden;isolation:isolate}
+.hero-grid{position:relative;z-index:1}
+/* Desktop: float in the gap between the copy and the profile card (card column starts ~50% + 87px) */
+.molecule-animation{position:absolute;z-index:0;left:calc(50% + 40px - 280px);top:50%;width:560px;height:auto;transform:translateY(-50%);opacity:.85;pointer-events:none;user-select:none}
+@media (max-width:980px){
+  .molecule-animation{top:-30px;right:-110px;width:380px;transform:none;opacity:.35}
+}
+@media (max-width:480px){.molecule-animation{width:300px;right:-120px;top:-20px;opacity:.3}}
+@media (prefers-reduced-motion:reduce){.molecule-animation{display:none}}
+
 /* Question bank downloads */
 .downloads{padding-top:0}
 .download-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}

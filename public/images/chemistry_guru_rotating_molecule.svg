@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="600" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Rotating chemistry molecule animation</title>
+  <desc id="desc">A transparent-background molecular model with gold bonds and blue, gold, and white atoms rotating continuously for a chemistry website hero section.</desc>
+  <defs>
+    <radialGradient id="atomBlue" cx="30%" cy="25%" r="75%">
+      <stop offset="0" stop-color="#d8f0ff"/>
+      <stop offset=".28" stop-color="#68b9ff"/>
+      <stop offset=".72" stop-color="#2466bb"/>
+      <stop offset="1" stop-color="#10284e"/>
+    </radialGradient>
+    <radialGradient id="atomGold" cx="30%" cy="25%" r="75%">
+      <stop offset="0" stop-color="#fff6c9"/>
+      <stop offset=".3" stop-color="#ffd45d"/>
+      <stop offset=".75" stop-color="#e9a91e"/>
+      <stop offset="1" stop-color="#8e5a08"/>
+    </radialGradient>
+    <radialGradient id="atomWhite" cx="30%" cy="25%" r="75%">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".55" stop-color="#e5edf8"/>
+      <stop offset="1" stop-color="#9aaac2"/>
+    </radialGradient>
+    <linearGradient id="bond" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff0a6"/>
+      <stop offset=".5" stop-color="#ffc83d"/>
+      <stop offset="1" stop-color="#b77b0d"/>
+    </linearGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <g id="molecule">
+      <!-- bonds -->
+      <g stroke="url(#bond)" stroke-width="9" stroke-linecap="round" opacity=".95">
+        <path d="M0 0 L-105 -62 M0 0 L112 -48 M0 0 L28 112 M-105 -62 L-148 45 M112 -48 L166 45 M28 112 L-55 174 M28 112 L139 151 M-148 45 L-55 174 M166 45 L139 151"/>
+        <path d="M-105 -62 L-22 -147 M112 -48 L87 -151 M-55 174 L-122 236" stroke-width="5" opacity=".8"/>
+      </g>
+      <!-- atoms -->
+      <g filter="url(#glow)">
+        <circle cx="0" cy="0" r="38" fill="url(#atomBlue)" stroke="#9bd7ff" stroke-width="2"/>
+        <circle cx="-105" cy="-62" r="29" fill="url(#atomGold)" stroke="#ffe39a" stroke-width="2"/>
+        <circle cx="112" cy="-48" r="31" fill="url(#atomWhite)" stroke="#ffffff" stroke-width="2"/>
+        <circle cx="28" cy="112" r="32" fill="url(#atomGold)" stroke="#ffe39a" stroke-width="2"/>
+        <circle cx="-148" cy="45" r="24" fill="url(#atomWhite)" stroke="#ffffff" stroke-width="2"/>
+        <circle cx="166" cy="45" r="25" fill="url(#atomBlue)" stroke="#9bd7ff" stroke-width="2"/>
+        <circle cx="-55" cy="174" r="25" fill="url(#atomBlue)" stroke="#9bd7ff" stroke-width="2"/>
+        <circle cx="139" cy="151" r="27" fill="url(#atomWhite)" stroke="#ffffff" stroke-width="2"/>
+        <circle cx="-22" cy="-147" r="20" fill="url(#atomWhite)" stroke="#ffffff" stroke-width="2"/>
+        <circle cx="87" cy="-151" r="22" fill="url(#atomGold)" stroke="#ffe39a" stroke-width="2"/>
+        <circle cx="-122" cy="236" r="18" fill="url(#atomGold)" stroke="#ffe39a" stroke-width="2"/>
+      </g>
+      <!-- specular highlights -->
+      <g fill="#ffffff" opacity=".72">
+        <circle cx="-11" cy="-12" r="8"/><circle cx="-114" cy="-72" r="6"/>
+        <circle cx="102" cy="-58" r="7"/><circle cx="18" cy="101" r="7"/>
+        <circle cx="-156" cy="37" r="5"/><circle cx="158" cy="36" r="5"/>
+      </g>
+    </g>
+  </defs>
+
+  <!-- subtle orbit paths -->
+  <g fill="none" stroke="#7da9e8" stroke-width="1.5" opacity=".28">
+    <ellipse cx="400" cy="300" rx="240" ry="95" transform="rotate(-25 400 300)"/>
+    <ellipse cx="400" cy="300" rx="240" ry="95" transform="rotate(42 400 300)"/>
+    <ellipse cx="400" cy="300" rx="180" ry="250" transform="rotate(66 400 300)"/>
+  </g>
+  <g opacity=".75" fill="#ffd04d">
+    <circle cx="170" cy="215" r="3"><animate attributeName="opacity" values=".2;1;.2" dur="2.8s" repeatCount="indefinite"/></circle>
+    <circle cx="616" cy="196" r="4"><animate attributeName="opacity" values="1;.25;1" dur="3.4s" repeatCount="indefinite"/></circle>
+    <circle cx="563" cy="454" r="3"><animate attributeName="opacity" values=".25;1;.25" dur="2.2s" repeatCount="indefinite"/></circle>
+  </g>
+
+  <!-- Continuous rotation around the molecule centre. The rotation lives on an
+       inner group so it does not replace the outer translate. -->
+  <g transform="translate(400 292)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="24s" repeatCount="indefinite"/>
+      <g transform="scale(1.02)">
+        <use href="#molecule" xlink:href="#molecule"/>
+      </g>
+    </g>
+  </g>
+  <!-- Gentle counter-rotating orbit ring -->
+  <ellipse cx="400" cy="292" rx="225" ry="86" fill="none" stroke="#ffcc4d" stroke-width="2" stroke-dasharray="5 12" opacity=".58" transform="rotate(-22 400 292)">
+    <animateTransform attributeName="transform" additive="sum" type="rotate" from="0 400 292" to="-360 400 292" dur="38s" repeatCount="indefinite"/>
+  </ellipse>
+</svg>
