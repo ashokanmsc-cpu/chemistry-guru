@@ -63,6 +63,12 @@ export const TRANSLATIONS = {
   'dl.pages': { en: 'pages', ta: 'பக்கங்கள்' },
   'dl.download': { en: 'Download PDF ↓', ta: 'பதிவிறக்கு ↓' },
   'dl.view': { en: 'View', ta: 'பார்க்க' },
+  'ppt.kicker': { en: 'Class 12 presentations', ta: '12ஆம் வகுப்பு விளக்கக்காட்சிகள்' },
+  'ppt.title': { en: 'PPT', ta: 'PPT' },
+  'ppt.class12': { en: 'Class XII', ta: 'பன்னிரண்டாம் வகுப்பு' },
+  'ppt.text': { en: 'Open chapter presentation PDFs for quick visual revision.', ta: 'விரைவான காட்சிவழி திருப்புதலுக்குப் பாட விளக்கக்காட்சி PDF-களைத் திறக்கவும்.' },
+  'ppt.open': { en: 'Open PDF ↗', ta: 'PDF திறக்க ↗' },
+  'ppt.window': { en: 'Open in new window', ta: 'புதிய சாளரத்தில் திறக்க' },
   'vid.kicker': { en: 'Fresh from YouTube', ta: 'YouTube-இல் புதியவை' },
   'vid.title': { en: 'Latest videos', ta: 'சமீபத்திய காணொளிகள்' },
   'vid.text': {

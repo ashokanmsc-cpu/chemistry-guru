@@ -50,6 +50,7 @@ export class Testimonials implements AfterViewInit, OnDestroy {
     { src: 'testrimonials/2.jpg', alt: 'Testimonial photo 2' },
     { src: 'testrimonials/3.jpg', alt: 'Testimonial photo 3' },
     { src: 'testrimonials/4.jpg', alt: 'Testimonial photo 4' },
+    { src: 'testrimonials/5.jpg', alt: 'Testimonial photo 5' },
   ];
   protected readonly slides = [...this.photos, ...this.photos, ...this.photos];
 

@@ -13,7 +13,7 @@ import { YOUTUBE_URL } from '../config';
     @if (videos.length) {
       <section class="section videos" id="videos">
         <div class="wrap">
-          <div class="section-head" appReveal>
+          <div class="section-head" appReveal style="padding-top:25px">
             <div>
               <div class="kicker">{{ 'vid.kicker' | t }}</div>
               <h2>{{ 'vid.title' | t }}</h2>
