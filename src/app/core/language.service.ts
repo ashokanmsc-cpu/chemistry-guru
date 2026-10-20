@@ -17,7 +17,13 @@ export class LanguageService {
     // Browser only: restore the visitor's saved choice after hydration.
     afterNextRender(() => {
       try {
-        if (localStorage.getItem(STORAGE_KEY) === 'ta') this.lang.set('ta');
+        const requestedLanguage = new URLSearchParams(this.document.defaultView?.location.search ?? '').get('lang');
+        if (requestedLanguage === 'en' || requestedLanguage === 'ta') {
+          this.lang.set(requestedLanguage);
+          localStorage.setItem(STORAGE_KEY, requestedLanguage);
+        } else if (localStorage.getItem(STORAGE_KEY) === 'ta') {
+          this.lang.set('ta');
+        }
       } catch { /* storage unavailable */ }
     });
   }

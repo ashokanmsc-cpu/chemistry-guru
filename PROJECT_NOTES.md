@@ -5,7 +5,7 @@ A bilingual (English / Tamil) website for **Dr. Ashokan P – Chemistry Guru** (
 
 It was converted from a single static HTML file into **Angular 22** (1:1 port), then extended.
 
-- **Live site:** https://ashokanmsc-cpu.github.io/chemistry-guru/
+- **Live site:** https://chemistryguru.in/
 - **GitHub repo:** https://github.com/ashokanmsc-cpu/chemistry-guru (account: `ashokanmsc-cpu`)
 - **Local folder:** `C:\Users\Ashokan\chemistry-guru`
 - **OS / shell:** Windows 11, PowerShell 5.1
@@ -14,7 +14,7 @@ It was converted from a single static HTML file into **Angular 22** (1:1 port), 
 ```
 cd C:\Users\Ashokan\chemistry-guru
 npm start            # http://localhost:4200
-npx ng build --base-href /chemistry-guru/   # production build -> dist/chemistry-guru/browser
+npm run build:gh       # custom-domain production build -> dist/chemistry-guru/browser
 ```
 In PowerShell tool sessions, prepend PATH first:
 ```
@@ -23,7 +23,7 @@ $env:Path = "C:\Program Files\nodejs;C:\Program Files\Git\cmd;C:\Program Files\G
 Installed via winget: Node 24 LTS, Git, GitHub CLI (`gh`, authenticated via browser device flow – never ask for passwords).
 
 ## Deploy
-Push to `main` → GitHub Actions workflow `.github/workflows/deploy.yml` builds with `--base-href /<repo>/` and deploys `dist/chemistry-guru/browser` to GitHub Pages (~35 s).
+Push to `main` → GitHub Actions workflow `.github/workflows/deploy.yml` builds with `--base-href /` and deploys `dist/chemistry-guru/browser` to GitHub Pages (~35 s). The custom domain is `chemistryguru.in` and is preserved by `public/CNAME`.
 ```
 git add -A; git commit -m "message"; git push
 gh run list --limit 1
@@ -42,7 +42,7 @@ gh run list --limit 1
 | Chapters (Class 11 & 12), symbols, Tamil titles, Google Form links | `src/app/data/chapters.ts` |
 | All EN/TA UI text, dropdown options | `src/app/i18n/translations.ts` |
 | WhatsApp number (919841213187), YouTube, Telegram, logo/photo paths | `src/app/config.ts` |
-| Title, meta description, Open Graph, JSON-LD (WebSite, Person, 2 Courses), canonical | `src/index.html` |
+| Title, meta description, Open Graph, JSON-LD (WebSite, Person, WebPage), canonical | `src/index.html` |
 | Components | `src/app/components/` – header, hero, profile-card, marquee, chapter-card, chapter-list (Class 12/11 switch, volume tabs, search), social-links, contact (WhatsApp form + footer), overlays (to-top, toast) |
 | Scroll reveal directive | `src/app/shared/reveal.directive.ts` |
 | Images | `public/images/` – `logo.jpg`, `logo-192.jpg`, `logo-512.jpg`, `profile.jpg` (teacher photo, cropped from award photo) |

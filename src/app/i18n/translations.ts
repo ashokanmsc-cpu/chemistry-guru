@@ -111,6 +111,7 @@ export const TRANSLATIONS = {
 
   'footer.made': { en: 'Made for focused learning', ta: 'கவனமான கற்றலுக்காக உருவாக்கப்பட்டது' },
   'footer.top': { en: 'Back to top ↑', ta: 'மேலே செல்ல ↑' },
+  'footer.tamilPage': { en: 'Tamil study page', ta: 'தமிழ் படிப்புப் பக்கம்' },
 } satisfies Record<string, Bilingual>;
 
 export type TranslationKey = keyof typeof TRANSLATIONS;

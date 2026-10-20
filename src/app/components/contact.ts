@@ -62,7 +62,7 @@ import { TELEGRAM_URL, WHATSAPP_NUMBER, YOUTUBE_URL } from '../config';
 
         <div class="footer-bottom">
           <div>© {{ year }} Chemistry Guru · Dr. Ashokan P</div>
-          <div>{{ 'footer.made' | t }} · <a href="#home">{{ 'footer.top' | t }}</a></div>
+          <div>{{ 'footer.made' | t }} · <a href="#home">{{ 'footer.top' | t }}</a> · <a href="ta/">{{ 'footer.tamilPage' | t }}</a></div>
           <div class="footer-social">
             <a [href]="youtube" target="_blank" rel="noopener" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>
             <a [href]="telegram" target="_blank" rel="noopener" aria-label="Telegram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3l-3.2 15.1c-.2 1.1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.2 13.1l-4.8-1.5c-1-.3-1.1-1 .2-1.5L20.5 3c.9-.3 1.7.2 1.4 1.3z"/></svg></a>
