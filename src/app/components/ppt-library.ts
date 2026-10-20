@@ -37,7 +37,7 @@ interface Presentation {
                 <span class="pdf-badge" aria-hidden="true">PDF</span>
               </div>
               <span class="ppt-card-title">{{ language.pick(item.title) }}</span>
-              <span class="ppt-open">{{ 'ppt.open' | t }} <span aria-hidden="true">↗</span></span>
+              <span class="ppt-open">{{ 'ppt.open' | t }}</span>
             </button>
           }
         </div>
