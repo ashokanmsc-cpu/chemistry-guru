@@ -28,10 +28,12 @@ import { YOUTUBE_URL } from '../config';
                   <img [src]="'https://i.ytimg.com/vi/' + video.id + '/hqdefault.jpg'" [alt]="video.title"
                        width="480" height="360" loading="lazy" decoding="async">
                   <span class="video-play" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span>
+                  <span class="video-thumb-label">CHEMISTRY GURU</span>
                 </span>
                 <span class="video-body">
-                  <time [attr.datetime]="video.published">{{ date(video.published) }}</time>
+                  <span class="video-meta"><span class="video-source"><span aria-hidden="true">▶</span> YOUTUBE</span><time [attr.datetime]="video.published">{{ date(video.published) }}</time></span>
                   <h3>{{ video.title }}</h3>
+                  <span class="video-watch">{{ 'vid.watch' | t }} <span aria-hidden="true">↗</span></span>
                 </span>
               </a>
             }

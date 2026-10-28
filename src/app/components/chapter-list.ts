@@ -26,7 +26,17 @@ type VolumeFilter = 'all' | 1 | 2;
         <div class="std-switch" role="tablist" aria-label="Choose class">
           @for (s of standards; track s.value) {
             <button class="std-tab" type="button" role="tab" [attr.aria-selected]="std() === s.value"
-                    [class.active]="std() === s.value" (click)="std.set(s.value)">{{ s.key | t }}</button>
+                    [class.active]="std() === s.value" (click)="std.set(s.value)">
+              <span class="std-tab-icon" aria-hidden="true">
+                @if (s.value === 12) {
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8M9 3v5l-4.5 8.2A3.2 3.2 0 0 0 7.3 21h9.4a3.2 3.2 0 0 0 2.8-4.8L15 8V3"/><path d="M7 15h10M9 11h6"/></svg>
+                } @else {
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 5.5v16M8 7h8M8 11h8"/></svg>
+                }
+              </span>
+              <span class="std-tab-label">{{ s.key | t }}</span>
+              <svg class="std-tab-check" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m5 10 3.2 3.2L15 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
           }
         </div>
 

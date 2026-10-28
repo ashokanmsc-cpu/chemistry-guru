@@ -79,6 +79,7 @@ export const TRANSLATIONS = {
     ta: 'Chemistry Guru சேனலின் புதிய பாடங்கள் இங்கே தானாகவே தோன்றும்.',
   },
   'vid.all': { en: 'See all videos ↗', ta: 'அனைத்து காணொளிகளும் ↗' },
+  'vid.watch': { en: 'Watch video', ta: 'காணொளியைப் பார்க்க' },
   'tg.title': { en: 'Join the Telegram channel', ta: 'Telegram சேனலில் இணையுங்கள்' },
   'tg.text': {
     en: 'Get quiz updates, study materials and announcements directly on Telegram.',

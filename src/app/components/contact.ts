@@ -13,6 +13,12 @@ import { TELEGRAM_URL, WHATSAPP_NUMBER, YOUTUBE_URL } from '../config';
   host: { style: 'display:contents' },
   template: `
     <section class="contact" id="contact">
+      <div class="contact-ambient" aria-hidden="true">
+        <span class="ambient-shape ambient-ring"></span>
+        <span class="ambient-shape ambient-orb"></span>
+        <span class="ambient-shape ambient-diamond"></span>
+        <span class="ambient-shape ambient-ring-small"></span>
+      </div>
       <div class="wrap">
         <div class="contact-grid">
           <div appReveal>
