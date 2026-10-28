@@ -2022,6 +2022,26 @@ html[data-theme="light"] .theme-btn .icon-moon {
   gap: 16px
 }
 
+.public-exams {
+  padding-top: 0
+}
+
+.public-exam-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px
+}
+
+.public-exam-grid .ppt-card {
+  min-height: 208px;
+  gap: 18px;
+  padding: 21px 19px 20px 24px
+}
+
+.public-exam-grid .ppt-card-title {
+  font-size: 20px
+}
+
 .ppt-card {
   --ppt-accent: var(--gold);
   position: relative;
@@ -2289,10 +2309,12 @@ html[data-theme="light"] .theme-btn .icon-moon {
 
 @media (max-width: 980px) {
   .ppt-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+  .public-exam-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) }
 }
 
 @media (max-width: 620px) {
   .ppt-grid { grid-template-columns: minmax(0, 1fr); gap: 12px }
+  .public-exam-grid { grid-template-columns: minmax(0, 1fr); gap: 12px }
   .ppt-card { min-height: 190px; padding: 20px 20px 18px 24px }
   .ppt-card-title { font-size: 21px }
   .ppt-dialog { width: calc(100vw - 20px); max-height: 94vh; border-radius: 14px }
