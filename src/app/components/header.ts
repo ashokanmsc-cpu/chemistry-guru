@@ -19,10 +19,10 @@ import { LOGO_SRC } from '../config';
           <span><b>CHEMISTRY GURU</b><small class="ls">YOUR SUCCESS IS MY REACTION</small></span>
         </a>
         <nav class="nav-links" [class.open]="menuOpen()">
-          <a href="#profile" (click)="menuOpen.set(false)">{{ 'nav.profile' | t }}</a>
-          <a href="#quizzes" (click)="menuOpen.set(false)">{{ 'nav.quizzes' | t }}</a>
-          <a href="#downloads" (click)="menuOpen.set(false)">{{ 'nav.downloads' | t }}</a>
-          <a href="#contact" (click)="menuOpen.set(false)">{{ 'nav.contact' | t }}</a>
+          <a href="#profile" [class.active]="active() === 'profile'" (click)="menuOpen.set(false); active.set('profile')">{{ 'nav.profile' | t }}</a>
+          <a href="#quizzes" [class.active]="active() === 'quizzes'" (click)="menuOpen.set(false); active.set('quizzes')">{{ 'nav.quizzes' | t }}</a>
+          <a href="#downloads" [class.active]="active() === 'downloads'" (click)="menuOpen.set(false); active.set('downloads')">{{ 'nav.downloads' | t }}</a>
+          <a href="#contact" [class.active]="active() === 'contact'" (click)="menuOpen.set(false); active.set('contact')">{{ 'nav.contact' | t }}</a>
         </nav>
         <div class="language-switch" aria-label="Choose language">
           <button type="button" class="lang-btn" [class.active]="language.lang() === 'en'" (click)="language.set('en')">EN</button>
@@ -44,8 +44,25 @@ export class Header {
   protected readonly logo = LOGO_SRC;
   protected readonly scrolled = signal(false);
   protected readonly menuOpen = signal(false);
+  protected readonly active = signal('');
+  private readonly sections = ['profile', 'quizzes', 'downloads', 'contact'];
+
+  private ticking = false;
 
   protected onScroll(): void {
+    if (this.ticking) return;
+    this.ticking = true;
+    requestAnimationFrame(() => { this.ticking = false; this.update(); });
+  }
+
+  private update(): void {
     this.scrolled.set(window.scrollY > 8);
+    let current = '';
+    for (const id of this.sections) {
+      const el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top <= window.innerHeight * 0.35) current = id;
+    }
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) current = 'contact';
+    if (current !== this.active()) this.active.set(current);
   }
 }

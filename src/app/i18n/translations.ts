@@ -1,7 +1,7 @@
 import { Bilingual } from '../data/chapters';
 
 export const TRANSLATIONS = {
-  'nav.profile': { en: 'Teacher Profile', ta: 'ஆசிரியர் விவரம்' },
+  'nav.profile': { en: 'About', ta: 'அறிமுகம்' },
   'nav.quizzes': { en: 'Chapter Quizzes', ta: 'பாடவாரியான வினாடி வினா' },
   'nav.downloads': { en: 'Question Bank', ta: 'வினா வங்கி' },
   'nav.contact': { en: 'Contact', ta: 'தொடர்பு' },
@@ -15,7 +15,7 @@ export const TRANSLATIONS = {
     ta: 'மேல்நிலை முதலாம் மற்றும் இரண்டாம் ஆண்டு மாணவர்களுக்காகத் தயாரிக்கப்பட்ட பாடவாரியான ஒரு மதிப்பெண் வேதியியல் வினாக்களைப் பயிற்சி செய்யுங்கள்.',
   },
   'hero.start': { en: 'Start a Chapter Quiz →', ta: 'பாட வினாடி வினாவைத் தொடங்குக →' },
-  'hero.meet': { en: 'Meet Your Teacher', ta: 'ஆசிரியரை அறிய' },
+  'hero.meet': { en: 'Contact', ta: 'தொடர்பு' },
   'hero.stat1': { en: 'Chapter-wise quizzes', ta: 'பாடவாரியான வினாடி வினாக்கள்' },
   'hero.stat2v': { en: 'Vol 1 & 2', ta: 'தொகுதி 1 & 2' },
   'hero.stat2': { en: 'Chemistry syllabus', ta: 'வேதியியல் பாடத்திட்டம்' },
