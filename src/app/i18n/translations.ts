@@ -114,6 +114,7 @@ export const TRANSLATIONS = {
   'form.required': { en: 'Please fill in all required fields.', ta: 'தேவையான அனைத்து விவரங்களையும் நிரப்பவும்.' },
 
   'footer.made': { en: 'Made for focused learning', ta: 'கவனமான கற்றலுக்காக உருவாக்கப்பட்டது' },
+  'footer.visitors': { en: 'Visitors', ta: 'பார்வையாளர்கள்' },
   'footer.top': { en: 'Back to top ↑', ta: 'மேலே செல்ல ↑' },
   'footer.tamilPage': { en: 'Tamil study page', ta: 'தமிழ் படிப்புப் பக்கம்' },
 } satisfies Record<string, Bilingual>;

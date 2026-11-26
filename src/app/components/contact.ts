@@ -3,6 +3,7 @@ import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angula
 import { LanguageService } from '../core/language.service';
 import { TranslatePipe } from '../core/translate.pipe';
 import { ToastService } from '../core/toast.service';
+import { VisitorCounterService } from '../core/visitor-counter.service';
 import { RevealDirective } from '../shared/reveal.directive';
 import { CLASS_OPTIONS, TOPIC_OPTIONS, TOPIC_PLACEHOLDER } from '../i18n/translations';
 import { TELEGRAM_URL, WHATSAPP_NUMBER, YOUTUBE_URL } from '../config';
@@ -67,7 +68,14 @@ import { TELEGRAM_URL, WHATSAPP_NUMBER, YOUTUBE_URL } from '../config';
         </div>
 
         <div class="footer-bottom">
-          <div>© {{ year }} Chemistry Guru · Dr. Ashokan P</div>
+          <div class="footer-copy">
+            <span>© {{ year }} Chemistry Guru · Dr. Ashokan P</span>
+            <span class="visitor-badge" [attr.title]="'footer.visitors' | t">
+              <i class="visitor-dot" aria-hidden="true"></i>
+              <span class="visitor-label">{{ 'footer.visitors' | t }}</span>
+              <strong class="visitor-num">{{ visitors.count() === null ? '—' : visitors.count()!.toLocaleString('en-IN') }}</strong>
+            </span>
+          </div>
           <div>{{ 'footer.made' | t }} · <a href="#home">{{ 'footer.top' | t }}</a> · <a href="ta/">{{ 'footer.tamilPage' | t }}</a></div>
           <div class="footer-social">
             <a [href]="youtube" target="_blank" rel="noopener" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>
@@ -80,6 +88,7 @@ import { TELEGRAM_URL, WHATSAPP_NUMBER, YOUTUBE_URL } from '../config';
 })
 export class Contact {
   protected readonly language = inject(LanguageService);
+  protected readonly visitors = inject(VisitorCounterService);
   private readonly toast = inject(ToastService);
   private readonly formEl = viewChild.required<ElementRef<HTMLFormElement>>('formEl');
 
