@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, ElementRef, inject, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { LanguageService } from '../core/language.service';
 import { TranslatePipe } from '../core/translate.pipe';
@@ -12,6 +12,8 @@ import { LOGO_SRC } from '../config';
   host: {
     style: 'display:contents',
     '(window:scroll)': 'onScroll()',
+    '(document:click)': 'onDocClick($event)',
+    '(document:keydown.escape)': 'megaOpen.set(false)',
   },
   template: `
     <header class="topbar" [class.scrolled]="scrolled()">
@@ -71,6 +73,13 @@ export class Header {
   protected readonly dismissed = signal(false);
   protected readonly labItems = LAB_ITEMS;
   protected closeAll(): void { this.menuOpen.set(false); this.megaOpen.set(false); this.dismissed.set(true); }
+  private readonly host = inject(ElementRef<HTMLElement>);
+  protected onDocClick(e: Event): void {
+    if (!this.megaOpen()) return;
+    const t = e.target as Node;
+    const mega = this.host.nativeElement.querySelector('.mega') as HTMLElement | null;
+    if (mega && !mega.contains(t)) this.megaOpen.set(false);
+  }
   private readonly sections = ['profile', 'quizzes', 'downloads', 'contact'];
 
   private ticking = false;
