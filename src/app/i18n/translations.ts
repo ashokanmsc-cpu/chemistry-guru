@@ -4,6 +4,11 @@ export const TRANSLATIONS = {
   'nav.profile': { en: 'About', ta: 'அறிமுகம்' },
   'nav.quizzes': { en: 'Chapter Quizzes', ta: 'பாடவாரியான வினாடி வினா' },
   'nav.downloads': { en: 'Question Bank', ta: 'வினா வங்கி' },
+  'nav.lab': { en: 'Virtual Lab', ta: 'மெய்நிகர் ஆய்வகம்' },
+  'nav.new': { en: 'NEW', ta: 'புதியது' },
+  'cfs.kicker': { en: 'INTERACTIVE SIMULATOR', ta: 'ஊடாடும் உருவகப்படுத்தி' },
+  'cfs.title': { en: 'Crystal Field Splitting', ta: 'படிகப் புலப் பிரிகை' },
+  'cfs.text': { en: 'Watch ligands approach a metal ion and the five d orbitals split. Fill electrons and compare field strength with pairing energy (P = 1).', ta: 'உலோக அயனியை நோக்கி ligand-கள் நெருங்கும்போது ஐந்து d ஆர்பிட்டால்கள் பிரிவதைப் பாருங்கள். எலக்ட்ரான்களை நிரப்பி புல வலிமையை இணையாக்க ஆற்றலுடன் (P = 1) ஒப்பிடுங்கள்.' },
   'nav.contact': { en: 'Contact', ta: 'தொடர்பு' },
   'nav.cta': { en: 'Explore Quizzes ↗', ta: 'வினாடி வினாக்கள் ↗' },
 
